@@ -1,0 +1,5 @@
+"C:/Users/acer/Desktop/files_ORGANIZADO/OlhoVivo/sql/olho_vivo.sql"
+
+1. criar base de dados olho_vivo
+2. exit
+3. mysql -u root -p olho_vivo < "C:/Users/acer/Desktop/files_ORGANIZADO/OlhoVivo/sql/olho_vivo.sql"
