@@ -9,7 +9,7 @@ public class NegocioException extends Exception {
     public static NegocioException de(java.sql.SQLException e) {
         String m = e.getMessage() == null ? "" : e.getMessage();
         if ("45000".equals(e.getSQLState())) return new NegocioException(m.replaceFirst("^\\(conn=\\d+\\)\\s*", ""), e);
-        if (e.getErrorCode() == 1062) return new NegocioException("Ja existe um registo com esse valor (contacto, email, nome ou matricula).", e);
+        if (e.getErrorCode() == 1062) return new NegocioException("Ja existe um registo com esse valor.", e);
         if (e.getErrorCode() == 1451) return new NegocioException("Nao e possivel apagar: existem registos dependentes.", e);
         if (e.getErrorCode() == 3819 || e.getErrorCode() == 4025) return new NegocioException("Valor rejeitado por uma restricao CHECK da base de dados.", e);
         if (e.getSQLState() != null && e.getSQLState().startsWith("08"))
